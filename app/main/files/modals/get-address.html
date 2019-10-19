@@ -9,13 +9,14 @@
       {{'getAddress.title'|translate}}
     </h4>
   </div>
+  <!-- 标题结束 -->
   <div class="modal-body">
 
     <div class="form-group">
       <label class="col-sm-2 control-label" for="name">{{'name'|translate}}:</label>
       <div class="col-sm-8">
         <input type="text" ng-model="item.name" id="name"  readonly
-        placeholder="bucket" class="input-md form-control"/>
+               placeholder="bucket" class="input-md form-control"/>
       </div>
     </div>
 
@@ -43,6 +44,54 @@
       </div>
 
     </div>
+    <!-- 生成自定义域名地址: -->
+    <div class="form-group-xf" ng-if="step==1">
+      <label class="col-sm-2 control-label" for="acl">
+        {{'address'|translate}}
+        <!-- 地址: -->
+
+      </label>
+      <div class="col-sm-8-xf">
+        <div class="input-group">
+          <input type="text" id="genAddress-xf" ng-model="item.urlOwn" rows="4"  class="input-md form-control"/>
+          <span class="input-group-btn">
+            <a href="" class="btn btn-info"  clipboard-button target="'#genAddress-xf'">
+              <!-- 点击复制 -->
+              {{'click.copy'|translate}}
+            </a>
+          </span>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="info.showSendTo=!info.showSendTo">
+              {{'send.email'|translate}}
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- 生成自定义Markdown域名地址: -->
+    <div class="form-group-xfmd" ng-if="step==1">
+      <label class="col-sm-2 control-label" for="acl">
+        {{'Markdown'}}
+        <!-- 地址: -->
+
+      </label>
+      <div class="col-sm-8-xf-md">
+        <div class="input-group">
+          <input type="text" id="genAddress-xfmd" ng-model="item.urlMd" rows="4"  class="input-md form-control"/>
+          <span class="input-group-btn">
+            <a href="" class="btn btn-info"  clipboard-button target="'#genAddress-xfmd'">
+              <!-- 点击复制 -->
+              {{'click.copy'|translate}}
+            </a>
+          </span>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="info.showSendTo=!info.showSendTo">
+              {{'send.email'|translate}}
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
 
     <div class="form-group" ng-if="step==2">
       <label class="col-sm-2 control-label" for="acl">
@@ -54,7 +103,7 @@
         <!-- 请输入链接有效期: -->
         {{'getAddress.message'|translate}}:
         <input type="number" ng-model="info.sec" id="sec" required
-        placeholder="" class="input-md form-control" style="display:inline-block;width:80px"/>
+               placeholder="" class="input-md form-control" style="display:inline-block;width:80px"/>
         {{'unit.second'|translate}}
         &nbsp;&nbsp;
         <button type="submit" class="btn btn-success btn-sm">
@@ -102,8 +151,8 @@
         <div class="input-group">
 
           <input type="email" name="email" required ng-pattern="reg.email"
-           ng-keyup="$event.keyCode==13?sendTo(form1):void(0)"
-           ng-model="info.mailTo" placeholder="Email" class="input-md form-control"/>
+                 ng-keyup="$event.keyCode==13?sendTo(form1):void(0)"
+                 ng-model="info.mailTo" placeholder="Email" class="input-md form-control"/>
           <span class="input-group-btn">
             <button type="button" ng-disabled="!form1.email.$valid" class="btn btn-primary" ng-click="sendTo(form1)">
               {{'send.now'|translate}}

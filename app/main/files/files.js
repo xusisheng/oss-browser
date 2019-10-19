@@ -1080,6 +1080,9 @@ angular.module('web')
           controller: 'getAddressModalCtrl',
           resolve: {
             item: function () {
+                // @微信订阅号zxiaofan
+                item.urlOwn=item.pic_url.substring(0,item.pic_url.indexOf('?'));
+                item.urlMd="!["+item.name+"]("+item.urlOwn+")";
               return angular.copy(item);
             },
             currentInfo: function () {

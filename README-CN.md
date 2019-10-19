@@ -1,5 +1,22 @@
 # OSS Browser
 
+Fork from aliyun/oss-browser（2019-10-19 By @zxiaofan），扩展“获取地址”操作（PS：官方一直不优化，只有自己动手了）：
+- 获取地址支持自定义域名；
+- 获取地址支持获取markdown格式地址，直接可用于书写Markdown文章。    
+- 尽量和官方版本保持同步更新，版本号后加.1，如官方VERSION=1.9.5，则此处VERSION=1.9.5.1。
+- 需要使用此版本的朋友，可从releases直接下载，或者自行下载源码编译。
+
+**示例（欢迎扫码关注@zxiaofan的公众号）** ：   
+![1910ossBrower_zxiaofan.jpg](http://tc.zxiaofan.com/tc/a/1910/1910ossBrower_zxiaofan.jpg)
+
+File Modified:
+- files.js；
+- get-address.html；
+- about.html；
+- Makefile；
+
+---
+
 OSS Browser 提供类似 windows 资源管理器功能。用户可以很方便的浏览文件，上传下载文件，支持断点续传等。
 
 本工具使用开源框架 Angular 1.x + [Electron](http://electron.atom.io/)制作。
@@ -129,12 +146,16 @@ git clone git@github.com:aliyun/oss-browser.git
 
 ```
 make i
+或者请使用
+cnpm i
 ```
 
 ### (5) 运行
 
 ```
 make run  # 开发模式运行, command+option+i 可用打开调试界面, win或linux按 F12.
+或者
+npm run dev
 ```
 
 开发模式下，会自动监听源码,如有修改,会自动 build 前端代码到 dist 目录。
@@ -143,10 +164,14 @@ make run  # 开发模式运行, command+option+i 可用打开调试界面, win�
 
 ```
 make build  # build前端代码到dist目录
+或者
+npm run build  # build前端代码到dist目录
 ```
 
 ```
 make win64  # 打包win64程序， 可选: mac, linux64,linux32,win32,win64,all.
+或者
+npm run win64  # 打包win64程序， 可选: mac, linux64 等
 ```
 
 ## 5. 代码结构
