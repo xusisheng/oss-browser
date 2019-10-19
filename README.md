@@ -7,6 +7,8 @@ Fork from aliyun/oss-browser（2019-10-19 By @zxiaofan），扩展“获取地�
 - 需要使用此版本的朋友，可从releases直接下载，或者自行下载源码编译；
 - 修改默认READEME为中文版；
 
+PS：如果觉得GitHub-Release下载较慢，可前往[csdn.zxiaofan.com](https://me.csdn.net/download/u010887744)下载。
+
 **示例（欢迎扫码订阅公众号@zxiaofan，一起交流学习）** ：   
 ![1910ossBrower_zxiaofan.jpg](http://tc.zxiaofan.com/tc/a/1910/1910ossBrower_zxiaofan.jpg)
 
@@ -171,8 +173,6 @@ npm run build  # build前端代码到dist目录
 
 ```
 make win64  # 打包win64程序， 可选: mac, linux64,linux32,win32,win64,all.
-或者
-npm run win64  # 打包win64程序， 可选: mac, linux64 等
 ```
 
 ## 5. 代码结构
